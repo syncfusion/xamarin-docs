@@ -6,7 +6,7 @@ platform: xamarin
 control: SfDataGrid
 documentation: ug
 ---
-# Scrolling 
+# Scrolling in Xamarin.Forms DataGrid(SfDataGrid)
 
 ## Scrolling mode
 
@@ -245,3 +245,11 @@ private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
 
 
 ![DataGrid with programmatic scrolling using a slider](SfDataGrid_images/Slider.gif)
+
+## Retain scroll position
+
+To retain the scroll position when [ItemsSource](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.SfDataGrid.html#Syncfusion_SfDataGrid_XForms_SfDataGrid_ItemsSource) changes, set the [SfDataGrid.CanMaintainScrollPosition](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.SfDataGrid.html#Syncfusion_SfDataGrid_XForms_SfDataGrid_CanMaintainScrollPosition) to true. If you set [SfDataGrid.CanMaintainScrollPosition](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.SfDataGrid.html#Syncfusion_SfDataGrid_XForms_SfDataGrid_CanMaintainScrollPosition) to true then on changing `ItemsSource`, the newly added `ItemsSource` will be loaded with the previous ItemsSource's [ScrollOffset](https://help.syncfusion.com/cr/xamarin/Syncfusion.GridCommon.ScrollAxis.VisibleLineInfo.html#Syncfusion_GridCommon_ScrollAxis_VisibleLineInfo_ScrollOffset).
+
+{% highlight C# %}
+dataGrid.CanMaintainScrollPosition = true;
+{% endhighlight %}

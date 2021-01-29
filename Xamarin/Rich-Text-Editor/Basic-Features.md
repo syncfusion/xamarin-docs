@@ -57,3 +57,114 @@ richtexteditor.InsertHTMLText("New text content");
 {% endhighlight %}
 
 {% endtabs %}
+
+## TextChanged 
+
+The TextChanged event will trigger in the Rich Text Editor for every text change action in the content.
+
+{% tabs %} 
+
+{% highlight xaml %} 
+
+ <rte:SfRichTextEditor x:Name="richtexteditor" TextChanged="Richtexteditor_TextChanged" VerticalOptions="FillAndExpand"/>
+
+{% endhighlight %}
+
+{% highlight C# %} 
+SfRichTextEditor richtexteditor = new SfRichTextEditor();
+richtexteditor.TextChanged += Richtexteditor_TextChanged;
+this.Content = richtexteditor;
+			
+private void Richtexteditor_TextChanged(object sender, Syncfusion.XForms.RichTextEditor.TextChangedEventArgs e)
+{
+	string text = e.Text;
+}
+{% endhighlight %}
+
+{% endtabs %}
+
+## FormatChanged 
+
+The FormatChanged event will trigger in the Rich Text Editor if any format change occurs in the content such as bold, italic, underline, and other formatting supports provided in the toolbar.
+
+{% tabs %} 
+
+{% highlight xaml %} 
+
+ <rte:SfRichTextEditor x:Name="richtexteditor" FormatChanged="Richtexteditor_FormatChanged" VerticalOptions="FillAndExpand"/>
+
+{% endhighlight %}
+
+{% highlight C# %} 
+SfRichTextEditor richtexteditor = new SfRichTextEditor();
+richtexteditor.FormatChanged += Richtexteditor_FormatChanged;
+this.Content = richtexteditor;
+			
+private void Richtexteditor_FormatChanged(object sender, FormatChangedEventArgs e)
+{
+	bool isBold = e.bold;
+}
+
+{% endhighlight %}
+
+{% endtabs %}
+
+## Cursor Position
+
+ Rich Text Editor provides the support to get or set the current cursor position based on the character count in the rich text editor. The following code example explains how to get or set a cursor position in the Rich Text Editor.
+ 
+ {% tabs %} 
+
+{% highlight C# %} 
+
+//To get current cursor position
+int CurrentPosition = richtexteditor.CursorPosition;
+
+//To set current cursor position
+richtexteditor.CursorPosition = 10;
+
+{% endhighlight %}
+
+{% endtabs %}
+
+N> Set the CursorPosition based on the character count will not working in the Xamarin RichTextEditor iOS due to the control focus limitation.
+
+## Content Height
+
+Rich Text Editor provides the support to get the height of the rendered content. The following code example explains how to get the rendered content height in the Rich Text Editor. 
+
+{% tabs %} 
+
+{% highlight C# %} 
+
+//To get height of the rendered content.
+int ContentHeight = richtexteditor.ContentHeightRequest;
+
+{% endhighlight %}
+
+{% endtabs %}
+
+N> This is a readonly property.
+
+## RichTextEditor scrolls in scroll view layout
+
+RichTextEditor relies on WebView for rendering the HTML content and, as there is a limitation for placing the WebView inside the ScrollView control. As in [MSDN](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/scrollview#usage), the ScrollViews should not be nested with other controls that provide scrolling like ListView and WebView. So, the scrolling is not working in the SfRichTextEditor, which is inside the ScrollView in Android. This is known as the [LimitationOfWebView](https://help.syncfusion.com/xamarin/rich-text-editor/overview#limitations).
+
+To overcome this issue, you can scroll either parent layout or RichTextEditor but not both. This can be done by enabling the `ScrollOrientation` property to `None` (i.e., RichTextEditor will not scroll). The default value is `Vertical` (i.e., RichTextEditor scrolls vertically). 
+
+N> It applies to android only. Since iOS and UWP do not have the limitation in a scroll view. It can scroll either in scroll layout or within the control but not both due to the WebView limitation.
+
+{% tabs %} 
+
+{% highlight xaml %} 
+
+<ScrollView>
+    <StackLayout>
+        <richtexteditor:SfRichTextEditor ScrollOrientation="None" HeightRequest="500" Text="The rich text editor component is WYSIWYG editor that provides the best user experience to create and update the content." />
+        <richtexteditor:SfRichTextEditor ScrollOrientation="None" HeightRequest="500" Text="The rich text editor component allows Applies formatting such as bold, italics, and underline." />
+    </StackLayout>
+</ScrollView>
+
+{% endhighlight %}
+
+{% endtabs %}

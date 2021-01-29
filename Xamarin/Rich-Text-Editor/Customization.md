@@ -20,6 +20,7 @@ The [`ToolbarOptions`](https://help.syncfusion.com/cr/xamarin/Syncfusion.XForms.
 * `BulletList`	
 * `ClearFormat`
 * `DecreaseIndent`
+* `Font`
 * `FontColor`
 * `FontSize`
 * `HighlightColor`
@@ -29,6 +30,8 @@ The [`ToolbarOptions`](https://help.syncfusion.com/cr/xamarin/Syncfusion.XForms.
 * `NumberList`
 * `ParagraphFormat`
 * `Redo`
+* `SubScript`
+* `SuperScript`
 * `Underline`
 * `Undo`
 * `All` - default
