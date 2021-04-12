@@ -592,3 +592,56 @@ pdfViewerControl.AnnotationSettings.Ink.TouchMode = TouchMode.Stylus;
 {% endtabs %}
 
 N>At present, this feature is available only in iOS
+
+## How to render Ink strokes using custom ink points?
+
+By default, ink strokes are drawn by recording the points on the screen traversed by the input device (stylus or finger). The quality of the strokes thus drawn may not be satisfactory as it considers only raw points. If needed, the points can be modified using any algorithms to smoothen the strokes. 
+
+When the ink session ends after drawing the strokes, the [InkAdded](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.SfPdfViewer.html#Syncfusion_SfPdfViewer_XForms_SfPdfViewer_InkAdded) event will be raised. The [InkAnnotation](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.InkAnnotation.html) instance that is drawn on the page is exposed as sender argument of the [InkAdded](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.SfPdfViewer.html#Syncfusion_SfPdfViewer_XForms_SfPdfViewer_InkAdded) event. We can get the Ink points which we drew on the page from [InkAnnotation.InkPointsCollection](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.InkAnnotation.html#Syncfusion_SfPdfViewer_XForms_InkAnnotation_InkPointsCollection). The [InkPointsCollection](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.InkAnnotation.html#Syncfusion_SfPdfViewer_XForms_InkAnnotation_InkPointsCollection) is of a type List<List<float>>. Each List<float> in this collection represents each stroke of the Ink annotation we drew. There are as many List<float> instances in the [InkPointsCollection](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.InkAnnotation.html#Syncfusion_SfPdfViewer_XForms_InkAnnotation_InkPointsCollection) as the number of strokes in the Ink annotation.
+
+The List<float> in turn, has the series of alternate X and Y coordinates of the ink stroke. i.e. the values at the odd position are X coordinates and at the even position are Y coordinates.
+
+We can modify or add new stroke points in the [InkAnnotation.InkPointsCollection](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.InkAnnotation.html#Syncfusion_SfPdfViewer_XForms_InkAnnotation_InkPointsCollection). As soon as the [InkAdded](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.SfPdfViewer.html#Syncfusion_SfPdfViewer_XForms_SfPdfViewer_InkAdded) event handler completes execution, the modified points will be reflected in the ink annotation on the UI.
+
+{% tabs %}
+{% highlight c# %}
+
+private void PdfViewerControl_InkAdded(object sender, InkAddedEventArgs args) 
+{     
+     InkAnnotation inkAnnotation = sender as InkAnnotation;         
+ 
+     List<List<float>> drawnPoints = inkAnnotation.InkPointsCollection; 
+ 
+     //Modify the drawn ink points 
+     List<List<float>> modifiedPoints = PerformModification(drawnPoints); 
+ 
+     inkAnnotation.InkPointsCollection = modifiedPoints; 
+}
+
+{% endhighlight %}
+{% endtabs %}
+
+N> The strokes cannot be smoothened when the user is drawing the strokes as the points are still being recorded. They can be smoothened only after the user confirms the end of the ink session. 
+
+##How to get and set the name of the annotations?
+
+The PDF Viewer allows the users to get and set the name of annotations through the [Name](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.IAnnotation.html#Syncfusion_SfPdfViewer_XForms_IAnnotation_Name) API.
+
+The following code sample explains modifying the name of the annotation in the [InkAdded](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.SfPdfViewer.html#Syncfusion_SfPdfViewer_XForms_SfPdfViewer_InkAdded) event. 
+
+{% tabs %}
+{% highlight c# %}
+private void PdfViewerControl_InkAdded(object sender, InkAddedEventArgs args)
+{
+   if(sender is InkAnnotation)
+    {
+    (sender as InkAnnotation).Name = "Ink1";
+    }
+}
+
+{% endhighlight %}
+{% endtabs %}
+
+N>For illustration purposes, we have only provided the sample for modifying the name of the annotation in the [InkAdded](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPdfViewer.XForms.SfPdfViewer.html#Syncfusion_SfPdfViewer_XForms_SfPdfViewer_InkAdded) event. But this can be done in all other events as well. 
+
+
