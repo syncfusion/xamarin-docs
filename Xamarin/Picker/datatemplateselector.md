@@ -1,7 +1,7 @@
 ---
 layout: post
-title: DataTemplateSelector of Syncfusion Xamarin.Forms SfPicker
-description: Learn about DataTemplateSelector support in Syncfusion Xamarin Picker (SfPicker) control and more details.
+title: DataTemplateSelector in Xamarin Picker control | Syncfusion
+description: Learn here all about DataTemplateSelector support in Syncfusion Xamarin Picker (SfPicker) control and more.
 platform: Xamarin
 control: Picker
 documentation: ug
@@ -171,4 +171,4 @@ The following screenshot illustrates the output of above code.
 
 We have attached sample for reference. You can download the sample from the following link.
 
-Sample link:[DataTemplateSelectorSample](http://www.syncfusion.com/downloads/support/directtrac/general/ze/DataTemplateSelectorSample1687574118)
+Sample link:[DataTemplateSelectorSample](https://github.com/SyncfusionExamples/data-template-selector-picker)

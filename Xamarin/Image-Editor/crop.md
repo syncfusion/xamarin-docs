@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Cropping Image in Syncfusion SfImageEditor control in Xamarin.Forms
-description: Learn how to crop an image in different ways in the SfImageEditor control for Xamarin.Forms platforms
+title: Crop in Xamarin Image Editor control | Syncfusion
+description: Learn here all about Crop support in Syncfusion Xamarin Image Editor (SfImageEditor) control and more.
 platform: xamarin
 control: ImageEditor
 documentation: ug
 ---
 
-# Crop in SfImageEditor
+# Crop in Xamarin Image Editor (SfImageEditor)
 
 You can crop the desired portion of an image using the cropping tool.
 

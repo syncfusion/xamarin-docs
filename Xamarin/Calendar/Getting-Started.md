@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Getting Started with Syncfusion Calendar control for Xamarin.Forms
-description: Learn here about getting started with Syncfusion Xamarin Calendar (SfCalendar) control and more details.
+title: Getting Started with Xamarin Calendar control | Syncfusion
+description: Learn here about getting started with Syncfusion Xamarin Calendar (SfCalendar) control, its elements and more.
 platform: Xamarin
 control: Calendar
 documentation: ug
@@ -10,6 +10,14 @@ documentation: ug
 # Getting Started with Xamarin Calendar (SfCalendar)
 
 This section explains how to implement simple holiday indicator application which allows user to select working days using [SfCalendar](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfCalendar.XForms.SfCalendar.html) control.
+
+## Assembly deployment
+
+After installing [Essential Studio for Xamarin](https://www.syncfusion.com/downloads/xamarin), you can find all the required assemblies in the installation folders, {Syncfusion Essential Studio Installed location} \Essential Studio\\{Version #}\Xamarin\lib.
+
+E.g.: C:\Program Files (x86) \Syncfusion\Essential Studio\19.1.0.54\Xamarin\lib
+
+N> Assemblies can be found in unzipped package location(Documents/Syncfusion/{Version #}/Xamarin/lib) in Mac.
 
 ## Adding SfCalendar reference
 

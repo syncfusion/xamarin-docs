@@ -11,7 +11,6 @@ documentation: ug
 
 SfComboBox supports DataTemplateSelector, which is used to choose a DataTemplate based on data object.
  
-
 {% tabs %}
 
 {% highlight xaml %}
@@ -175,7 +174,7 @@ The following screenshot illustrates the output of above code.
 
 We have attached sample for reference. You can download the sample from the following link.
 
-Sample Link: [SfComboBox_DataTemplateSelector](https://www.syncfusion.com/downloads/support/directtrac/general/ze/SfComboBox_DataTemplateSelector-1083496192.zip)
+Sample Link: [SfComboBox_DataTemplateSelector](https://github.com/SyncfusionExamples/datatemplate-selector-sfcombobox)
 
 
 

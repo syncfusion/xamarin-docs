@@ -18,6 +18,14 @@ To get start quickly with Xamarin Circular Gauge control, you can check on this 
 <style>#XamarinGaugeVideoTutorial{width : 90% !important; height: 300px !important }</style>
 <iframe id='XamarinGaugeVideoTutorial' src='https://www.youtube.com/embed/Rjd9NxDFoWo'></iframe>
 
+## Assembly deployment
+
+After installing [Essential Studio for Xamarin](https://www.syncfusion.com/downloads/xamarin), you can find all the required assemblies in the installation folders, {Syncfusion Essential Studio Installed location} \Essential Studio\\{Version #}\Xamarin\lib.
+
+E.g.: C:\Program Files (x86) \Syncfusion\Essential Studio\19.1.0.54\Xamarin\lib
+
+N> Assemblies can be found in unzipped package location(Documents/Syncfusion/{Version #}/Xamarin/lib) in Mac.
+
 ## Adding SfCircularGauge reference
 
 You can add SfCircularGauge reference using one of the following methods:
@@ -502,4 +510,4 @@ You can find the complete getting started sample from this [`link`](https://gith
 
 [How to create circular gauge with a graphical image as the background](https://www.syncfusion.com/kb/4958/how-to-create-sfcirculargauge-with-a-graphical-image-as-the-background)
 
-[How can you use data binding in gauge with the MVVM pattern](syncfusion.com/kb/4138/how-can-you-use-data-binding-in-gauge-with-the-mvvm-pattern)
+[How can you use data binding in gauge with the MVVM pattern](https://www.syncfusion.com/kb/4138/how-can-you-use-data-binding-in-gauge-with-the-mvvm-pattern)

@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Getting Started with Syncfusion ImageEditor control for Xamarin.Forms
-description: Image editor has a built-in toolbar, which has options to edit the image with shapes, path, text, crop, and flip.
+title: Getting Started with Xamarin Image Editor control | Syncfusion
+description: Learn here about getting started with Syncfusion Xamarin Image Editor (SfImageEditor) control, its elements and more.
 platform: xamarin
 control: SfImageEditor
 documentation: ug
 ---
 
-# Getting Started with SfImageEditor
+# Getting Started with Xamarin Image Editor (SfImageEditor)
 
 This section explains the steps required to load an image to the image editor control.
 
@@ -15,6 +15,14 @@ To get start quickly with Xamarin Image Editor control, you can check on this vi
 
 <style>#xamarinImageEditorVideoTutorial{width : 90% !important; height: 300px !important }</style>
 <iframe id='xamarinImageEditorVideoTutorial' src='https://www.youtube.com/embed/SW1fsk7YbeA'></iframe>
+
+## Assembly deployment
+
+After installing [Essential Studio for Xamarin](https://www.syncfusion.com/downloads/xamarin), you can find all the required assemblies in the installation folders, {Syncfusion Essential Studio Installed location} \Essential Studio\\{Version #}\Xamarin\lib.
+
+E.g.: C:\Program Files (x86) \Syncfusion\Essential Studio\19.1.0.54\Xamarin\lib
+
+N> Assemblies can be found in unzipped package location(Documents/Syncfusion/{Version #}/Xamarin/lib) in Mac.
 
 ## Adding SfImageEditor reference
 
