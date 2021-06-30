@@ -127,7 +127,11 @@ public class CustomStyle : DataGridStyle
 
 ## Custom grouping
 
-The SfDataGrid allows to group a column based on custom logic when the standard grouping techniques do not meet the requirements. To achieve this, write a converter that implements `IValueConverter` with custom grouping logic. Assign that converter to the [GroupColumnDescription.Converter](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.GroupColumnDescription.html#Syncfusion_SfDataGrid_XForms_GroupColumnDescription_Converter) property.
+The SfDataGrid allows to group a column based on custom logic when the standard grouping techniques do not meet the requirements.
+
+### Using IValueConverter
+
+To achieve this, write a converter that implements `IValueConverter` with custom grouping logic. Assign that converter to the [GroupColumnDescription.Converter](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.GroupColumnDescription.html#Syncfusion_SfDataGrid_XForms_GroupColumnDescription_Converter) property.
 
 To set custom grouping converter for the group description that is added to group the freight column, follow the code example:
 
@@ -196,6 +200,50 @@ public class GroupConverter : IValueConverter
     }
 }
 {% endhighlight %}
+
+### Using KeySelector
+
+To achieve this, specify the custom logic in [GroupColumnDescription.KeySelector](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.GroupColumnDescription.html#Syncfusion_SfDataGrid_XForms_GroupColumnDescription_KeySelector) property and column name in [GroupColumnDescription.ColumnName](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.GroupColumnDescription.html#Syncfusion_SfDataGrid_XForms_GroupColumnDescription_ColumnName) property.
+
+In the below example, the Date column is grouped based on weeks.
+{% tabs %}
+{% highlight c# %}
+//Apply the CustomGrouping for Date Column by using KeySelector.
+dataGrid.GroupColumnDescriptions.Add(new GroupColumnDescription()
+{
+    ColumnName = "Date",
+    KeySelector = (string ColumnName, object o) =>
+        {
+            var dt = DateTime.Now;
+            var item = (o as SalesByDate).Date;
+            var days = (int)Math.Floor((dt - item).TotalDays);
+            var dayOfWeek = (int)dt.DayOfWeek;
+            var difference = days - dayOfWeek;
+            if (days <= dayOfWeek)
+            {
+                if (days == 0)
+                    return "TODAY";
+                if (days == 1)
+                    return "YESTERDAY";
+                return item.Date.DayOfWeek.ToString().ToUpper();
+            }
+            if (difference > 0 && difference <= 7)
+                return "LAST WEEK";
+            if (difference > 7 && difference <= 14)
+                return "TWO WEEKS AGO";
+            if (difference > 14 && difference <= 21)
+                return "THREE WEEKS AGO";
+            if (dt.Year == item.Date.Year && dt.Month == item.Date.Month)
+                return "EARLIER THIS MONTH";
+            if (DateTime.Now.AddMonths(-1).Month == item.Date.Month)
+                return "LAST MONTH";
+            return "OLDER";
+        }
+
+});
+{% endhighlight %}
+{% endtabs %}
+
 
 ### Sorting the grouped column records
 In custom grouping, you can sort all the inner records of each group by setting [GroupColumnDescription.SortGroupRecords](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfDataGrid.XForms.GroupColumnDescription.html#Syncfusion_SfDataGrid_XForms_GroupColumnDescription_SortGroupRecords) property as `true` to sort the records based on the `GroupColumnDescription.ColumnName` property.
@@ -484,7 +532,7 @@ The [GroupChangingEventArgs](http://help.syncfusion.com/cr/xamarin/Syncfusion.Sf
 
  `Cancel`: Decides to cancel group expansion.
  
-Cancel group expansion by setting [GroupChangingEventArgs.Cancel](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs.cancel?f1url=%3FappId%3DDev10IDEF1%26l%3DEN-US%26k%3Dk(System.ComponentModel.CancelEventArgs.Cancel)%26rd%3Dtrue&view=net-5.0) to `true`.
+Cancel group expansion by setting [GroupChangingEventArgs.Cancel](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs.cancel?view=net-5.0) to `true`.
 
 {% tabs %}
 {% highlight c# %}
@@ -516,7 +564,7 @@ The [GroupChangingEventArgs](http://help.syncfusion.com/cr/xamarin/Syncfusion.Sf
 
  `Cancel`: Decides to cancel the group collapsing.
 
-Cancel the group is being collapsed by using the [GroupChangingEventArgs.Cancel](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs.cancel?f1url=%3FappId%3DDev10IDEF1%26l%3DEN-US%26k%3Dk(System.ComponentModel.CancelEventArgs.Cancel)%26rd%3Dtrue&view=net-5.0) of `GroupCollapsing` event.
+Cancel the group is being collapsed by using the [GroupChangingEventArgs.Cancel](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs.cancel?view=net-5.0) of `GroupCollapsing` event.
 
 {% tabs %}
 {% highlight c# %}
@@ -587,6 +635,8 @@ this.dataGrid.ShowColumnWhenGrouped = false;
 
 {% endhighlight %}
 {% endtabs %}
+
+N> You can refer to our [Xamarin DataGrid](https://www.syncfusion.com/xamarin-ui-controls/xamarin-datagrid) feature tour page for its groundbreaking feature representations. You can also explore our [Xamarin.Forms DataGrid example](https://github.com/syncfusion/xamarin-demos/tree/master/Forms/DataGrid) to knows various chart types and how to easily configured with built-in support for creating stunning visual effects.
 
 ## See also
 
