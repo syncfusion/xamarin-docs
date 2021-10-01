@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Legend in Syncfusion Maps control for Xamarin.Forms
-description: Learn here all about legend feature in Syncfusion Xamarin.Forms Maps(SfMaps) control with custom support and more.
+title: Legend in Xamarin.Forms Maps control | Syncfusion
+description: Learn here all about Legend support in Syncfusion Xamarin Maps (SfMaps) control, its elements and more.
 platform: xamarin
 control: SfMaps
 documentation: ug

@@ -1,15 +1,15 @@
 ---
 
 layout: post
-title: Syncfusion SfCircularGauge control for Xamarin.Forms
-description:  A quick tour to initial users about the Syncfusion CircularGauge control for the Xamarin.Forms Platform
+title: Getting Started with Xamarin Circular Gauge control | Syncfusion
+description: Learn here about getting started with Syncfusion Xamarin Circular Gauge (SfCircularGauge) control, its elements and more.
 platform: xamarin
 control: SfCircularGauge
 documentation: ug
 
 ---
 
-# Getting Started with SfCircularGauge
+# Getting Started with Xamarin Circular Gauge (SfCircularGauge)
 
 This section explains the steps required to configure the [`SfCircularGauge`](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfGauge.XForms.SfCircularGauge.html), and also explains the steps required to add basic elements to [`SfCircularGauge`](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfGauge.XForms.SfCircularGauge.html) through various APIs available within it.
 

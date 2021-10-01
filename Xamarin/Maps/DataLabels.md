@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Data Labels in Syncfusion Xamarin.Forms Maps control
-description: Learn here all about data labels feature in Syncfusion Xamarin.Forms Maps control with custom support and more.
+title: Data Labels in Xamarin.Forms Maps control | Syncfusion
+description: Learn here all about Data Labels support in Syncfusion Xamarin Maps (SfMaps) control, its elements and more.
 platform: xamarin
 control: SfMaps
 documentation: ug
 ---
 
-# Data Labels in Xamarin.Forms Maps
+# Data Labels in Xamarin.Forms Maps (SfMaps)
 
 Data labels are used to display the values of shapes.
 

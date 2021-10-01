@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Maps provider of Syncfusion Maps control for Xamarin.Forms 
-description: Describes the adding OSM map, bing map and other imagery layer support in Xamarin Forms SfMaps control
+title: Maps Providers in Xamarin.Forms Maps control | Syncfusion
+description: Learn here all about Maps Providers support in Syncfusion Xamarin Maps (SfMaps) control, its elements and more.
 platform: xamarin
 control: SfMaps 
 documentation: ug
 ---
 
-# Map providers support in SfMaps
+# Maps Providers in Xamarin.Forms Maps (SfMaps)
 
 [Xamarin maps](https://www.syncfusion.com/xamarin-ui-controls/xamarin-maps) control supports map providers such as [`OpenStreetMap`](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfMaps.XForms.LayerType.html#Syncfusion_SfMaps_XForms_LayerType_OSM) and [`Bing Maps`](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfMaps.XForms.LayerType.html#Syncfusion_SfMaps_XForms_LayerType_Bing) that can be added to an imagery layer in maps.
 

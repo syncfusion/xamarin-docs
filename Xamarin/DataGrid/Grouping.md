@@ -13,7 +13,7 @@ A group represents a collection of records that belongs to a particular category
 
 To get started quickly with grouping in Xamarin.Forms DataGrid, you can check out this video:
 <style>#XamarinDataGridVideoTutorial{width : 90% !important; height: 400px !important }</style>
-<iframe id='XamarinDataGridVideoTutorial' src='https://www.youtube.com/watch?v=Z2JidYmNDYk'></iframe>
+<iframe id='XamarinDataGridVideoTutorial' src='https://www.youtube.com/embed/Z2JidYmNDYk'></iframe>
 
 N> To update grouping for the newly added row or column, set the `SfDataGrid.View.LiveDataUpdateMode` to `LiveDataUpdateMode.AllowDataShaping`.
 
@@ -99,7 +99,7 @@ this.dataGrid.IndentColumnWidth = 60;
 
 ### Customize indent column background color 
 
-Set background colors to indent cells based on the row where indent cells present. To set the desired background color, use the `GetIndentBackgroundColor()` override in the custom `DataGridStyle` class. Refer to this [link](https://help.syncfusion.com/xamarin/sfdatagrid/styles) to know how to apply custom style to the SfDataGrid. Refer to the following code snippet to apply background color to indent cells based on the row type:
+Set background colors to indent cells based on the row where indent cells present. To set the desired background color, use the `GetIndentBackgroundColor()` override in the custom `DataGridStyle` class. Refer to this [link](https://help.syncfusion.com/xamarin/datagrid/styles) to know how to apply custom style to the SfDataGrid. Refer to the following code snippet to apply background color to indent cells based on the row type:
 
 {% tabs %}
 {% highlight c# %}

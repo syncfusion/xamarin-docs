@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Populate Data of Syncfusion Maps control for Xamarin.Forms 
-description: Learn here all about PopulateData feature in Syncfusion Xamarin.Forms Maps control with data binding support and more.
+title: Populate Data in Xamarin.Forms Maps control | Syncfusion
+description: Learn here all about Populate Data support in Syncfusion Xamarin Maps (SfMaps) control, its elements and more.
 platform: xamarin
 control: SfMaps 
 documentation: ug
 ---
 
-# Populate Data in Xamarin Maps(SfMaps)
+# Populate Data in Xamarin.Forms Maps (SfMaps)
 
 This section explains how to populate shape data for providing data input to the maps control and usage of the `ItemsSource` property.
 

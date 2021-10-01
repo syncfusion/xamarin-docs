@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Shape type in Syncfusion SfMaps control for Xamarin.Forms
-description: This section describes drawing polyline, polygon and point icon shapes on maps using shape file and point collection
+title: Shape Types in Xamarin.Forms Maps control | Syncfusion
+description: Learn here all about Shape Types support in Syncfusion Xamarin Maps (SfMaps) control, its elements and more.
 platform: xamarin
 control: SfMaps
 documentation: ug
 ---
 
-# Shape Types in Xamarin Maps (SfMaps)
+# Shape Types in Xamarin.Forms Maps (SfMaps)
 
 This feature provide supports to draw a polygon, polyline and point icon on the map. We can provide input as the Geo points to draw shapes in two different ways. 
 
@@ -322,7 +322,7 @@ The size, shape, and position of the map points can be customized using the [`Ma
 
 ## Add shapes using shape file
 
-[`SfMaps`](https://help.syncfusion.com/xamarin/sfmaps/getting-started) allows to provide various shape types in [`ShapeFileLayer`](https://help.syncfusion.com/xamarin/sfmaps/layers#shape-file-layer) such as Polygon, Polyline, and Points. Shape point collection and shape type should be add in shape file itself.
+[`SfMaps`](https://help.syncfusion.com/xamarin/maps/getting-started) allows to provide various shape types in [`ShapeFileLayer`](https://help.syncfusion.com/xamarin/maps/layers#shape-file-layer) such as Polygon, Polyline, and Points. Shape point collection and shape type should be add in shape file itself.
 
 ### Polygon
 
@@ -330,7 +330,7 @@ The size, shape, and position of the map points can be customized using the [`Ma
 
 ### Polyline
 
-The shape file layer with the polyline shape type is used as [`sublayer`](https://help.syncfusion.com/xamarin/sfmaps/sublayer#adding-sublayers-in-shapefilelayer).
+The shape file layer with the polyline shape type is used as [`sublayer`](https://help.syncfusion.com/xamarin/maps/sublayer#adding-sublayers-in-shapefilelayer).
 
 The following code example demonstrates the sublayer with polyline shape type. The roads (sublayer) of Bahrain (base layer) is displayed using the shape file layer of maps.
 
@@ -412,7 +412,7 @@ this.Content = maps;
 
 ### Points
 
-The following code example demonstrates the [`sublayer`](https://help.syncfusion.com/xamarin/sfmaps/sublayer#adding-sublayers-in-shapefilelayer) with the points shape type. The places (sublayer) of Australia (base layer) is displayed using the shape file layer of maps.
+The following code example demonstrates the [`sublayer`](https://help.syncfusion.com/xamarin/maps/sublayer#adding-sublayers-in-shapefilelayer) with the points shape type. The places (sublayer) of Australia (base layer) is displayed using the shape file layer of maps.
 
 {% tabs %}
 
